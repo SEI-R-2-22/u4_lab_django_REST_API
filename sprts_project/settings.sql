@@ -1,0 +1,3 @@
+CREATE DATABASE sprts;
+CREATE USER sprtsuser WITH PASSWORD 'sprts';
+GRANT ALL PRIVILEGES ON DATABASE sprts TO sprtsuser;
