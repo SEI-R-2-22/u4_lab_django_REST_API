@@ -1,0 +1,4 @@
+-- settings.sql
+CREATE DATABASE nhl;
+CREATE USER nhluser WITH PASSWORD 'nhl';
+GRANT ALL PRIVILEGES ON DATABASE nhl TO nhluser;
