@@ -2,11 +2,23 @@ from django.db import models
 
 # Create your models here.
 
+class Conference(models.Model):
+  name = models.CharField(max_length=100)
+  
+  def __str__(self):
+      return self.name
+
+class Division(models.Model):
+  name = models.CharField(max_length=100)
+  
+  def __str__(self):
+      return self.name
 class Team(models.Model):
   name = models.CharField(max_length=100)
+  conference = models.ForeignKey(Conference, on_delete=models.CASCADE)
+  division = models.ForeignKey(Division, on_delete=models.CASCADE)
   city = models.CharField(max_length=100)
   state = models.CharField(max_length=2)
-  division = models.CharField(max_length=100)
   win = models.IntegerField()
   loss = models.IntegerField()
   
@@ -22,5 +34,7 @@ class Player(models.Model):
   
   def __str__(self):
       return self.name
+  
+
   
 
