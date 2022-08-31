@@ -29,9 +29,9 @@ class PlayerDetail(generics.RetrieveUpdateDestroyAPIView):
   queryset = Player.objects.all()
   serializer_class = PlayerSerializer
   
-class ConferenceList(generics.RetrieveUpdateDestroyAPIView):
+class ConferenceDetail(generics.RetrieveUpdateDestroyAPIView):
   queryset = Conference.objects.all()
   serializer_class = ConferenceSerializer
-class DivisionList(generics.RetrieveUpdateDestroyAPIView):
+class DivisionDetail(generics.RetrieveUpdateDestroyAPIView):
   queryset = Division.objects.all()
   serializer_class = DivisionSerializer

@@ -15,8 +15,8 @@ class Division(models.Model):
       return self.name
 class Team(models.Model):
   name = models.CharField(max_length=100)
-  conference = models.ForeignKey(Conference, on_delete=models.CASCADE)
-  division = models.ForeignKey(Division, on_delete=models.CASCADE)
+  conference = models.ForeignKey(Conference, on_delete=models.CASCADE, related_name="teams")
+  division = models.ForeignKey(Division, on_delete=models.CASCADE, related_name="teams")
   city = models.CharField(max_length=100)
   state = models.CharField(max_length=2)
   win = models.IntegerField()
